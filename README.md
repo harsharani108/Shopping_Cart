@@ -1,5 +1,5 @@
 # Shopping_Cart
-Shopping Cart implementation using angular 4
+Shopping Cart implementation using angular 6
 
 ***Installation***
 
