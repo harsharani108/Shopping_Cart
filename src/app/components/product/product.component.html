@@ -1,0 +1,31 @@
+<div class="row">
+    <div *ngFor="let product of products">
+        <div class="col-xs-4 padding-10">
+            <mat-card class="card-container-phone">
+                <mat-card-header>
+                    <md-card-title>
+                     <strong>{{product.name}}</strong>    
+                    </md-card-title>
+                </mat-card-header>
+
+                <img width="220" height="220" class="image-align-center padding-bottom-10" (click)="clickedProduct(product)" src={{product.src}} />
+                <mat-card-content>
+                <p>{{product.info}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+
+                    <div class="addtocart">
+                        <button (click)="addToCart(product)" class="btn btn-sm btn-primary">Add to Cart <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></button>
+                    </div>
+
+                    <div class="details">
+                        <span>${{product.price}}</span>
+                        <button (click)="clickedProduct(product)" class="btn btn-sm btn-success">Details</button>
+                    </div>
+                   
+                </mat-card-actions>
+            </mat-card>
+        </div>
+
+    </div>
+</div>

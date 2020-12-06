@@ -1,0 +1,32 @@
+<div *ngIf="cart.length <= 0">
+    <h3 class="text-center">No items in the Cart!</h3>
+</div>
+<table class="table table-striped table-hover ">
+    <thead>
+        <tr>
+        <th>Quantity </th>
+        <th>Product Name</th>
+        <th>Product Price</th>
+        <th>Image</th>
+        <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of cart; let i = index">
+        <td><h5>{{product.quantity}}</h5></td>
+        <td><h5>{{product.name}}</h5></td>
+        <td><h5>{{product.price}}</h5></td>
+        <td><img src={{product.src}} width="60" height="60" /></td>
+        <td><button (click)="removeProduct(product)" class="btn btn-xs btn-danger">Remove Product</button></td>
+      </tr>
+
+      <tr class="total">
+        <td><h4></h4></td>
+        <td><h4>Total Cart Items :<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> {{totalQuantity}}</h4></td>
+        <td><h4>Total : $ {{totalPrice}}</h4></td>
+        <td><button (click)="checkout()" class="btn btn-md btn-success">Checkout</button></td>
+        <td></td>
+      </tr>
+    </tbody>
+</table>
